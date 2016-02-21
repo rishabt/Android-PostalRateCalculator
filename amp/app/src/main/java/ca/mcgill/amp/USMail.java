@@ -58,6 +58,7 @@ public class USMail extends Mail {
 
     @Override
     double calculateNonStandard() {
+
         return 0.0;
     }
 }

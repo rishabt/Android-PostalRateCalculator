@@ -164,6 +164,6 @@ public class USMailTest {
         weight = 95;
         us = new USMail(length, height, width, weight, Item.OTHER_METERPOSTALINDICA);
 
-        assert(us.calculateStandard() == us.rateFor100);
+        assert(us.calculateNonStandard() == us.rateFor100);
     }
 }
