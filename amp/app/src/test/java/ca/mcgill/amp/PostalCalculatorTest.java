@@ -11,6 +11,7 @@ import static org.junit.Assert.*;
 public class PostalCalculatorTest {
 
     PostalCalculator calculator;
+    Mail us;
 
     @Before
     public void setUp() throws Exception {
@@ -22,6 +23,7 @@ public class PostalCalculatorTest {
         Item itemType = Item.OTHER_STAMP;
         String location = "US";
         calculator = new PostalCalculator(height, width, length, weight, itemType, location);
+        us = new USMail(length, height, width, weight, itemType);
     }
 
 
@@ -48,6 +50,18 @@ public class PostalCalculatorTest {
         assertEquals(Item.getType(Item.REGULAR_SINGLESTAMP),"Regular");
         assertEquals(Item.getType(Item.OTHER_STAMP),"Other");
         assertEquals(Item.getType(Item.OTHER_METERPOSTALINDICA),"Other");
+    }
+
+    /*
+    Instantiate a US mail object
+     */
+    @Test
+    public void testUSMailConstructor(){
+        assertEquals(Item.OTHER_STAMP,us.itemType);
+        assert(0.0 == us.weight);
+        assert(0.0 == us.height);
+        assert(0.0 == us.length);
+        assert(0.0 == us.width);
     }
 
 
