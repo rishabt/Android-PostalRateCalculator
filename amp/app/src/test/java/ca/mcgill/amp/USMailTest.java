@@ -135,7 +135,7 @@ public class USMailTest {
        Check Error condition for negative weights
     */
     @Test
-    public void testErroConditionCalculateStandardRateWeightLessThanZero(){
+    public void testErrorConditionCalculateStandardRateWeightLessThanZero(){
 
         weight = -1;
         us = new USMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
@@ -147,7 +147,7 @@ public class USMailTest {
       Check Error condition for overweight posts
    */
     @Test
-    public void testErroConditionCalculateStandardRateOverWeight(){
+    public void testErrorConditionCalculateStandardRateOverWeight(){
 
         weight = 55.0;
         us = new USMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
