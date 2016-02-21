@@ -29,6 +29,11 @@ public class USMail extends Mail {
                 this.rateFor200 = 5.15;
                 this.rateFor500 = 10.30;
                 break;
+            case OTHER_METERPOSTALINDICA :
+                this.rateFor100 = 2.68;
+                this.rateFor200 = 4.85;
+                this.rateFor500 = 9.69;
+                break;
             default:
                 break;
 
