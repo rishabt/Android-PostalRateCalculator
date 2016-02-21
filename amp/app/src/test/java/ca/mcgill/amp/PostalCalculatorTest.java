@@ -81,4 +81,21 @@ public class PostalCalculatorTest {
                 break;
         }
     }
+
+    /*
+   Set the postal rates for different types of stamps
+    */
+    @Test
+    public void testSampleRatesREGULAR_SINGLESTAMP(){
+
+        us = new USMail(length, height, width, weight, Item.REGULAR_SINGLESTAMP);
+        switch(us.itemType){
+            case REGULAR_SINGLESTAMP:
+                assert(us.rateFor30 == 1.20);
+                assert(us.rateFor50 == 1.80);
+                break;
+            default:
+                break;
+        }
+    }
 }
