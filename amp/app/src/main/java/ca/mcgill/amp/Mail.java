@@ -5,11 +5,11 @@ package ca.mcgill.amp;
  */
 public abstract class Mail {
 
-    protected double length;
-    protected double height;
-    protected double width;
+    public double length;
+    public double height;
+    public double width;
 
-    protected double weight;
+    public double weight;
 
     Item itemType;
 

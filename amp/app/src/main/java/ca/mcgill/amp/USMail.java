@@ -5,16 +5,15 @@ package ca.mcgill.amp;
  */
 public class USMail extends Mail {
 
-    double rateFor30;
-    double rateFor50;
+    public double rateFor30;
+    public double rateFor50;
 
-    double rateFor100;
-    double rateFor200;
-    double rateFor500;
+    public double rateFor100;
+    public double rateFor200;
+    public double rateFor500;
 
     public USMail(double length, double height, double width, double weight, Item itemType){
         super(length, height, width, weight, itemType);
-
     }
 
 

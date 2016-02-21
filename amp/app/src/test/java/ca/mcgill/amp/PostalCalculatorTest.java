@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class PostalCalculatorTest {
 
     PostalCalculator calculator;
-    Mail us;
+    USMail us;
 
     @Before
     public void setUp() throws Exception {
@@ -64,5 +64,20 @@ public class PostalCalculatorTest {
         assert(0.0 == us.width);
     }
 
+    /*
+    Set the postal rates for different types of stamps
+     */
+    @Test
+    public void testSampleRatesREGULAR_METERPOSTALINDICA(){
 
+        us.itemType = Item.REGULAR_METERPOSTALINDICA;
+        switch(us.itemType){
+            case REGULAR_METERPOSTALINDICA :
+                assert(us.rateFor30 == 1.19);
+                assert(us.rateFor50  == 1.72);
+                break;
+            default:
+                break;
+        }
+    }
 }
