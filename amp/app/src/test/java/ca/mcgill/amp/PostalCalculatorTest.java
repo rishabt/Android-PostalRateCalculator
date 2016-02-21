@@ -12,16 +12,17 @@ public class PostalCalculatorTest {
 
     PostalCalculator calculator;
     USMail us;
+    double weight = 0.0;
+    double height =  0.0;
+    double length = 0.0;
+    double width = 0.0;
+
+    Item itemType = Item.OTHER_STAMP;
+    String location = "US";
 
     @Before
     public void setUp() throws Exception {
-        double weight = 0.0;
-        double height =  0.0;
-        double length = 0.0;
-        double width = 0.0;
 
-        Item itemType = Item.OTHER_STAMP;
-        String location = "US";
         calculator = new PostalCalculator(height, width, length, weight, itemType, location);
         us = new USMail(length, height, width, weight, itemType);
     }
@@ -70,11 +71,11 @@ public class PostalCalculatorTest {
     @Test
     public void testSampleRatesREGULAR_METERPOSTALINDICA(){
 
-        us.itemType = Item.REGULAR_METERPOSTALINDICA;
+        us = new USMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
         switch(us.itemType){
             case REGULAR_METERPOSTALINDICA :
                 assert(us.rateFor30 == 1.19);
-                assert(us.rateFor50  == 1.72);
+                assert(us.rateFor50 == 1.72);
                 break;
             default:
                 break;

@@ -16,7 +16,8 @@ public class USMail extends Mail {
         super(length, height, width, weight, itemType);
 
         switch(itemType){
-            case REGULAR_METERPOSTALINDICA : this.rateFor30 = 1.19;
+            case REGULAR_METERPOSTALINDICA :
+                this.rateFor30 = 1.19;
                 this.rateFor50 = 1.72;
                 break;
             default:
