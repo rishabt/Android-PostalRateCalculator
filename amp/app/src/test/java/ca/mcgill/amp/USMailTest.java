@@ -142,4 +142,16 @@ public class USMailTest {
 
         assert(us.calculateStandard() == ErrorCodes.NEGATIVE_VALUE.code);
     }
+
+    /*
+      Check Error condition for overweight posts
+   */
+    @Test
+    public void testErroConditionCalculateStandardRateOverWeight(){
+
+        weight = 55.0;
+        us = new USMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
+
+        assert(us.calculateStandard() == ErrorCodes.OVERWEIGHT_FOR_CATEGORY.code);
+    }
 }
