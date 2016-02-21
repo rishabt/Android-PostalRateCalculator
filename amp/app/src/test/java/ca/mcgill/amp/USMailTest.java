@@ -130,4 +130,16 @@ public class USMailTest {
 
         assert(us.calculateStandard() == us.rateFor50);
     }
+
+    /*
+       Check Error condition for negative weights
+    */
+    @Test
+    public void testErroConditionCalculateStandardRateWeightLessThanZero(){
+
+        weight = -1;
+        us = new USMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
+
+        assert(us.calculateStandard() == ErrorCodes.NEGATIVE_VALUE.code);
+    }
 }
