@@ -135,9 +135,18 @@ public class PostalCalculatorTest {
         }
     }
 
-    /**
-     * Check Error codes
+    /*
+        Calculate the Standard rate for posts under 30 grams
      */
+    @Test
+    public void testCalculateStanardRateFor30(){
+
+        weight = 25;
+        us = new USMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
+
+        assert(us.calculateStandard() == us.rateFor30);
+    }
+
 
 
 }

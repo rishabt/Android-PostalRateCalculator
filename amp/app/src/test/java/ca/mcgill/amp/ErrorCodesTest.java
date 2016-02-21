@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
  */
 public class ErrorCodesTest {
 
-    ErrorCodes error;
+    static ErrorCodes error;
     @Before
     public void setUp() throws Exception {
     }
@@ -20,7 +20,7 @@ public class ErrorCodesTest {
         Set code value of enum
      */
     @Test
-    public void testErrorCodesInstantiation(){
+    public static void testErrorCodesInstantiation(){
 
         error = ErrorCodes.NEGATIVE_VALUE;
         assert(error.code == -2);
@@ -28,4 +28,5 @@ public class ErrorCodesTest {
         error = ErrorCodes.OVERWEIGHT_FOR_CATEGORY;
         assert(error.code == -3);
     }
+
 }
