@@ -116,4 +116,22 @@ public class PostalCalculatorTest {
                 break;
         }
     }
+
+    /*
+   Set the postal rates for different types of stamps
+   */
+    @Test
+    public void testSampleRatesOTHER_METERPOSTALINDICA(){
+
+        us = new USMail(length, height, width, weight, Item.OTHER_METERPOSTALINDICA);
+        switch(us.itemType){
+            case OTHER_METERPOSTALINDICA:
+                assert(us.rateFor100 == 2.68);
+                assert(us.rateFor200 == 4.85);
+                assert(us.rateFor500 == 9.69);
+                break;
+            default:
+                break;
+        }
+    }
 }
