@@ -14,11 +14,7 @@ public abstract class Mail {
     Item itemType;
 
     public Mail(double length, double height, double width, double weight, Item itemType){
-        this.length = length;
-        this.height = height;
-        this.width = width;
-        this.weight = weight;
-        this.itemType = itemType;
+
     }
 
     abstract double calculateStandard();
