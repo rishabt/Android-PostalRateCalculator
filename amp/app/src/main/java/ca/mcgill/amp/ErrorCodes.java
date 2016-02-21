@@ -10,7 +10,6 @@ public enum ErrorCodes {
 
     int code;
     ErrorCodes(int code){
-
+        this.code = code;
     }
-
 }
