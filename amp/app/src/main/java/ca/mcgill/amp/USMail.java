@@ -20,6 +20,10 @@ public class USMail extends Mail {
                 this.rateFor30 = 1.19;
                 this.rateFor50 = 1.72;
                 break;
+            case REGULAR_SINGLESTAMP :
+                this.rateFor30 = 1.20;
+                this.rateFor50 = 1.80;
+                break;
             default:
                 break;
 
