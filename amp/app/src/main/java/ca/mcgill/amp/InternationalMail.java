@@ -16,12 +16,14 @@ public class InternationalMail extends Mail {
         super(length, height, width, weight, itemType);
 
         switch(itemType) {
-            case REGULAR_METERPOSTALINDICA:
-                this.rateFor30 = 2.36;
-                this.rateFor50 = 3.42;
-                break;
+            case REGULAR_METERPOSTALINDICA:  this.rateFor30 = 2.36;
+                                             this.rateFor50 = 3.42;
+                                             break;
+            case REGULAR_SINGLESTAMP : 		 this.rateFor30 = 2.50;
+                                             this.rateFor50 = 3.60;
+                                             break;
             default:
-                break;
+                                             break;
         }
     }
 

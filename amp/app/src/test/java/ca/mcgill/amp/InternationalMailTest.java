@@ -51,4 +51,22 @@ public class InternationalMailTest {
                 break;
         }
     }
+
+    /*
+Set the postal rates for different types of stamps
+*/
+    @Test
+    public void testSampleRatesREGULAR_SINGLESTAMP(){
+
+        international = new InternationalMail(length, height, width, weight, Item.REGULAR_SINGLESTAMP);
+        switch(international.itemType){
+            case REGULAR_SINGLESTAMP:
+                assert(international.rateFor30 == 2.50);
+                assert(international.rateFor50 == 3.60);
+                break;
+            default:
+                break;
+        }
+    }
+
 }
