@@ -154,4 +154,16 @@ public class USMailTest {
 
         assert(us.calculateStandard() == ErrorCodes.OVERWEIGHT_FOR_CATEGORY.code);
     }
+
+    /*
+     Calculate the Non-Standard rate for rateFor100
+  */
+    @Test
+    public void testCalculateStanardRateFor100(){
+
+        weight = 95;
+        us = new USMail(length, height, width, weight, Item.OTHER_METERPOSTALINDICA);
+
+        assert(us.calculateStandard() == us.rateFor100);
+    }
 }
