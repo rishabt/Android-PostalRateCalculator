@@ -24,4 +24,6 @@ public class PostalCalculator {
         this.itemType = itemType;
         this.location = location;
     }
+
+
 }
