@@ -134,4 +134,10 @@ public class PostalCalculatorTest {
                 break;
         }
     }
+
+    /**
+     * Check Error codes
+     */
+
+
 }

@@ -40,67 +40,13 @@ public class USMail extends Mail {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Override
     double calculateStandard() {
-        // TODO Auto-generated method stub
-
-        if(this.weight > 0 && this.weight <= 30){
-            return this.rateFor30;
-        }
-        else if(this.weight > 30 && this.weight <= 50){
-            return this.rateFor50;
-        }
-        else if(this.weight < 0){
-            return ErrorCodes.NEGATIVE_VALUE.code;
-        }
-        else if(this.weight > 50){
-            return ErrorCodes.OVERWEIGHT_FOR_CATEGORY.code;
-        }
-
-        return -1;
+        return 0.0;
     }
 
     @Override
     double calculateNonStandard() {
-        // TODO Auto-generated method stub
-        if(this.weight > 0 && this.weight <= 100){
-            return this.rateFor100;
-        }
-        else if(this.weight > 100 && this.weight <= 200){
-            return this.rateFor200;
-        }
-        else if(this.weight > 200 && this.weight <= 500){
-            return this.rateFor500;
-        }
-        else if(this.weight < 0){
-            return ErrorCodes.NEGATIVE_VALUE.code;
-        }
-        else if(this.weight > 500){
-            return ErrorCodes.OVERWEIGHT_FOR_CATEGORY.code;
-        }
-
-        return -1;
+        return 0.0;
     }
 }

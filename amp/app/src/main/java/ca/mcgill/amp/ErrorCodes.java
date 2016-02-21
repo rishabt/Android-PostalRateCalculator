@@ -5,11 +5,12 @@ package ca.mcgill.amp;
  */
 public enum ErrorCodes {
 
-    NEGATIVE_VALUE (-2),
-    OVERWEIGHT_FOR_CATEGORY (-3);
+    NEGATIVE_VALUE(-2),
+    OVERWEIGHT_FOR_CATEGORY(-3);
 
     int code;
     ErrorCodes(int code){
-        this.code = code;
+
     }
+
 }
