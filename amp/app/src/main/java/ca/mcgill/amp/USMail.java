@@ -49,6 +49,8 @@ public class USMail extends Mail {
             return this.rateFor50;
         }else if(this.weight < 0){
             return ErrorCodes.NEGATIVE_VALUE.code;
+        }else if(this.weight > 50){
+            return ErrorCodes.OVERWEIGHT_FOR_CATEGORY.code;
         }
 
         return 0.0;
