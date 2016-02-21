@@ -59,6 +59,10 @@ public class USMail extends Mail {
     @Override
     double calculateNonStandard() {
 
+        if(this.weight > 0 && this.weight <= 100){
+            return this.rateFor100;
+        }
+
         return 0.0;
     }
 }
