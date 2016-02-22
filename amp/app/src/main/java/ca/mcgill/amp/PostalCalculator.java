@@ -25,6 +25,11 @@ public class PostalCalculator {
         this.location = location;
     }
 
+    public static boolean isValid(double length, double width, double height, boolean regular)
+    {
+       return false;
+    }
+
     public double calculate(){
 
         double rate;

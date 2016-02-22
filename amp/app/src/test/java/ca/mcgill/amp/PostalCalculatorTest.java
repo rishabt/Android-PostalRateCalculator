@@ -110,4 +110,27 @@ public class PostalCalculatorTest {
         PostalCalculator pc = new PostalCalculator(height, length, width, 99.0, Item.OTHER_STAMP, location_op3);
         assert(pc.calculate() == 5.90);
     }
+
+    /*
+    test validity of input
+     */
+    @Test
+    public void testIsValidInput(){
+
+        boolean regular = true;
+        length = -1;
+
+        assertFalse(PostalCalculator.isValid(length,width,height,regular));
+
+        width = 15.6;
+
+        assertTrue(PostalCalculator.isValid(length,width,height,regular));
+
+        regular = false;
+        height = 1;
+        assertTrue(PostalCalculator.isValid(length,width,height,regular));
+    }
+
+
+
 }
