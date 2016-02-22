@@ -153,4 +153,16 @@ public class InternationalMailTest {
         assert(international.calculateStandard() == ErrorCodes.OVERWEIGHT_FOR_CATEGORY.code);
     }
 
+    /*
+     Calculate the Non-Standard rate for rateFor100
+    */
+    @Test
+    public void testNonStandardRateFor100(){
+
+        weight = 95;
+        international = new InternationalMail(length, height, width, weight, Item.OTHER_METERPOSTALINDICA);
+
+        assert(international.calculateNonStandard() == us.rateFor100);
+    }
+
 }

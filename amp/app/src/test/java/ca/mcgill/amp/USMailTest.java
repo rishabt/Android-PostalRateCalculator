@@ -157,7 +157,7 @@ public class USMailTest {
 
     /*
      Calculate the Non-Standard rate for rateFor100
-  */
+    */
     @Test
     public void testNonStandardRateFor100(){
 
