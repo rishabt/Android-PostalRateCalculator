@@ -57,8 +57,12 @@ public class InternationalMail extends Mail {
     @Override
     double calculateNonStandard() {
         // TODO Auto-generated method stub
+
         if(this.weight > 0 && this.weight <= 100){
             return this.rateFor100;
+        }
+        else if(this.weight > 100 && this.weight <= 200){
+            return this.rateFor200;
         }
         return -1;
     }
