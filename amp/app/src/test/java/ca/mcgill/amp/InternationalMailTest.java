@@ -162,7 +162,7 @@ public class InternationalMailTest {
         weight = 95;
         international = new InternationalMail(length, height, width, weight, Item.OTHER_METERPOSTALINDICA);
 
-        assert(international.calculateNonStandard() == us.rateFor100);
+        assert(international.calculateNonStandard() == international.rateFor100);
     }
 
 }
