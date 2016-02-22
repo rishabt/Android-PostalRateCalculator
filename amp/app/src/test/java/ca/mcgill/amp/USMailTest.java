@@ -159,7 +159,7 @@ public class USMailTest {
      Calculate the Non-Standard rate for rateFor100
   */
     @Test
-    public void testCalculateStanardRateFor100(){
+    public void testNonStandardRateFor100(){
 
         weight = 95;
         us = new USMail(length, height, width, weight, Item.OTHER_METERPOSTALINDICA);
@@ -171,7 +171,7 @@ public class USMailTest {
     Calculate the Non-Standard rate for rateFor100
     */
     @Test
-    public void testCalculateStanardRateFor200(){
+    public void testCalculateNonStanardRateFor200(){
 
         weight = 195;
         us = new USMail(length, height, width, weight, Item.OTHER_METERPOSTALINDICA);
@@ -183,13 +183,15 @@ public class USMailTest {
     Calculate the Non-Standard rate for rateFor500
     */
     @Test
-    public void testCalculateStanardRateFor500(){
+    public void testCalculateNonStanardRateFor500(){
 
         weight = 495;
         us = new USMail(length, height, width, weight, Item.OTHER_METERPOSTALINDICA);
 
         assert(us.calculateNonStandard() == us.rateFor500);
     }
+
+
 
 
 

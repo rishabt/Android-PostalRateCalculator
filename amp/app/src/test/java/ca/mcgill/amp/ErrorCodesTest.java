@@ -20,7 +20,7 @@ public class ErrorCodesTest {
         Set code value of enum
      */
     @Test
-    public static void testErrorCodesInstantiation(){
+    public void testErrorCodesInstantiation(){
 
         error = ErrorCodes.NEGATIVE_VALUE;
         assert(error.code == -2);
