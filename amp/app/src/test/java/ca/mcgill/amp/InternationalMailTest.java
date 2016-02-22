@@ -109,7 +109,7 @@ public class InternationalMailTest {
     Calculate the Standard rate for posts under 30 grams
     */
     @Test
-    public void testCalculateStanardRateFor30(){
+    public void testCalculateStandardRateFor30(){
 
         weight = 25;
         international = new InternationalMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
@@ -121,7 +121,7 @@ public class InternationalMailTest {
        Calculate the Standard rate for posts under 50 grams
     */
     @Test
-    public void testCalculateStanardRateFor50(){
+    public void testCalculateStandardRateFor50(){
 
         weight = 35;
         international = new InternationalMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
