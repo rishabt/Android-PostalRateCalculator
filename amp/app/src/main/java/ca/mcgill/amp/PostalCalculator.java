@@ -48,29 +48,31 @@ public class PostalCalculator {
 
         double rate;
 
-        if(isValid(this.length, this.width, this.height, Item.getType(itemType).equals("Regular"))) {
-
-            if (location.equals("US")) {
-                Mail us = new USMail(this.length, this.height, this.width, this.weight, this.itemType);
-                if (Item.getType(itemType).equals("Regular")) {
-                    return us.calculateStandard();
-                } else {
-                    return us.calculateNonStandard();
-                }
-            } else if (location.equals("Canada")) {
-                Mail ca = new CanadaMail(this.length, this.height, this.width, this.weight, this.itemType);
-                if (Item.getType(itemType).equals("Regular")) {
-                    return ca.calculateStandard();
-                } else {
-                    return ca.calculateNonStandard();
-                }
-            } else if (location.equals("International")) {
-                Mail in = new InternationalMail(this.length, this.height, this.width, this.weight, this.itemType);
-                if (Item.getType(itemType).equals("Regular")) {
-                    return in.calculateStandard();
-                } else {
-                    return in.calculateNonStandard();
-                }
+        if(location.equals("US")){
+            Mail us = new USMail(this.length, this.height, this.width, this.weight, this.itemType);
+            if(Item.getType(itemType).equals("Regular")){
+                return us.calculateStandard();
+            }
+            else{
+                return us.calculateNonStandard();
+            }
+        }
+        else if(location.equals("Canada")){
+            Mail ca = new CanadaMail(this.length, this.height, this.width, this.weight, this.itemType);
+            if(Item.getType(itemType).equals("Regular")){
+                return ca.calculateStandard();
+            }
+            else{
+                return ca.calculateNonStandard();
+            }
+        }
+        else if(location.equals("International")){
+            Mail in = new InternationalMail(this.length, this.height, this.width, this.weight, this.itemType);
+            if(Item.getType(itemType).equals("Regular")){
+                return in.calculateStandard();
+            }
+            else{
+                return in.calculateNonStandard();
             }
         }
 
