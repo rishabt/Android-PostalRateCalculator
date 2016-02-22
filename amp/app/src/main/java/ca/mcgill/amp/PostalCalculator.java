@@ -23,8 +23,14 @@ public class PostalCalculator {
         this.weight = weight;
         this.itemType = itemType;
         this.location = location;
+    }
 
+    public double calculate(){
 
+        double rate;
+        
+
+        return -1;
     }
 
 }

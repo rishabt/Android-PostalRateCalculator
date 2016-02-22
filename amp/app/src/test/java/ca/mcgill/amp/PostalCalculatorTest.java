@@ -20,6 +20,10 @@ public class PostalCalculatorTest {
     Item itemType = Item.OTHER_STAMP;
     String location = "US";
 
+    String location_op1 = "US";
+    String location_op2 = "Canada";
+    String location_op3 = "International";
+
     @Before
     public void setUp() throws Exception {
 
@@ -42,7 +46,7 @@ public class PostalCalculatorTest {
     }
 
     /*
-    getType method should return the correct type of a stamp
+     getType method should return the correct type of a stamp
      */
     @Test
     public void testGetItemType(){
@@ -52,4 +56,15 @@ public class PostalCalculatorTest {
         assertEquals(Item.getType(Item.OTHER_STAMP),"Other");
         assertEquals(Item.getType(Item.OTHER_METERPOSTALINDICA),"Other");
     }
+
+    /*
+    test US rate
+     */
+    @Test
+    public void testUSMailStandardCalculate(){
+        PostalCalculator pc = new PostalCalculator(height, length, width, 29.0, Item.REGULAR_SINGLESTAMP, location_op1);
+        assert(pc.calculate() == 1.20);
+    }
+
+
 }
