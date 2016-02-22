@@ -132,6 +132,14 @@ public class MainActivity extends AppCompatActivity {
         if(len.length()>0)
             height= Double.parseDouble(hei);
 
+        boolean regular = true;
+        if(category.compareTo("Regular") == 0){
+            regular = true;
+        }else{
+            regular = false;
+        }
+
+
 
 
         Item item=null;
@@ -146,15 +154,18 @@ public class MainActivity extends AppCompatActivity {
             item = Item.REGULAR_SINGLESTAMP;
         }
 
-        double cost= new PostalCalculator(height,length,width,weight,item,country).calculate();
-
+        double cost;
         TextView costDisplay = (TextView)findViewById(R.id.editRate);
-        if(cost == -1 || cost == -2)
+        if (!PostalCalculator.isValid(length, width, height, regular)) {
             costDisplay.setText("invalid parameters");
-        else if (cost == -3)
-            costDisplay.setText("invalid size");
-        else
-            costDisplay.setText(Double.toString(cost));
-
+        }else{
+            cost= new PostalCalculator(height,length,width,weight,item,country).calculate();
+            if(cost == -1 || cost == -2)
+                costDisplay.setText("invalid parameters");
+            else if (cost == -3)
+                costDisplay.setText("invalid size");
+            else
+                costDisplay.setText(Double.toString(cost));
+        }
     }
 }
