@@ -16,7 +16,7 @@ public class InternationalMailTest {
     double width = 0.0;
 
     Item itemType = Item.OTHER_STAMP;
-    String location = "US";
+    String location = "International";
 
     @Before
     public void setUp() throws Exception {
@@ -139,6 +139,18 @@ public class InternationalMailTest {
         international = new InternationalMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
 
         assert(international.calculateStandard() == ErrorCodes.NEGATIVE_VALUE.code);
+    }
+
+    /*
+      Check Error condition for overweight posts
+   */
+    @Test
+    public void testErrorConditionCalculateStandardRateOverWeight(){
+
+        weight = 55.0;
+        international = new InternationalMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
+
+        assert(international.calculateStandard() == ErrorCodes.OVERWEIGHT_FOR_CATEGORY.code);
     }
 
 }
