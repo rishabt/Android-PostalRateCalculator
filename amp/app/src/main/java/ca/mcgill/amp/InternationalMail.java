@@ -39,6 +39,9 @@ public class InternationalMail extends Mail {
     double calculateStandard() {
         // TODO Auto-generated method stub
 
+        if(this.weight > 0 && this.weight <= 30){
+            return this.rateFor30;
+        }
         return -1;
     }
 
