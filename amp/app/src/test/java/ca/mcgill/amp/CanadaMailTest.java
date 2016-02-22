@@ -63,6 +63,19 @@ public class CanadaMailTest {
                 assert(canada.rateFor500 == 4.74);
                 break;
         }
-
     }
+
+    /*
+    Calculate the Standard rate for posts under 30 grams
+    */
+    @Test
+    public void testCalculateStandardRateFor30(){
+
+        weight = 25;
+        canada = new CanadaMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
+
+        assert(canada.calculateStandard() == canada.rateFor30);
+    }
+
+
 }
