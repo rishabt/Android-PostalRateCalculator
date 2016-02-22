@@ -47,6 +47,13 @@ public class PostalCalculator {
                 return ca.calculateNonStandard();
             }
         }
+        else if(location.equals("International")){
+            Mail in = new InternationalMail(this.length, this.height, this.width, this.weight, this.itemType);
+
+            return in.calculateStandard();
+
+
+        }
 
         return -1;
     }
