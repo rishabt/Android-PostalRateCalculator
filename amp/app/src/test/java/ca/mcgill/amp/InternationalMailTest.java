@@ -165,4 +165,16 @@ public class InternationalMailTest {
         assert(international.calculateNonStandard() == international.rateFor100);
     }
 
+    /*
+    Calculate the Non-Standard rate for rateFor100
+    */
+    @Test
+    public void testCalculateNonStandardRateFor200(){
+
+        weight = 195;
+        international = new InternationalMail(length, height, width, weight, Item.OTHER_METERPOSTALINDICA);
+
+        assert(international.calculateNonStandard() == international.rateFor200);
+    }
+
 }
