@@ -117,4 +117,16 @@ public class InternationalMailTest {
         assert(international.calculateStandard() == international.rateFor30);
     }
 
+    /*
+       Calculate the Standard rate for posts under 50 grams
+    */
+    @Test
+    public void testCalculateStanardRateFor50(){
+
+        weight = 35;
+        international = new InternationalMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
+
+        assert(international.calculateStandard() == international.rateFor50);
+    }
+
 }
