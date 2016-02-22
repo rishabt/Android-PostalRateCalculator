@@ -26,6 +26,10 @@ public class InternationalMail extends Mail {
                                              this.rateFor200 = 10.30;
                                              this.rateFor500 = 20.60;
                                              break;
+            case OTHER_METERPOSTALINDICA :   this.rateFor100 = 5.56;
+                                             this.rateFor200 = 9.69;
+                                             this.rateFor500 = 19.39;
+                                             break;
             default:
                                              break;
         }
@@ -35,6 +39,9 @@ public class InternationalMail extends Mail {
     double calculateStandard() {
         // TODO Auto-generated method stub
 
+        if(this.weight > 0 && this.weight <= 30){
+            return this.rateFor30;
+        }
         return -1;
     }
 

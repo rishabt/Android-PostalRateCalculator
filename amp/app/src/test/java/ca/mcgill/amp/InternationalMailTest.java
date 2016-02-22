@@ -87,4 +87,34 @@ public class InternationalMailTest {
         }
     }
 
+    /*
+    Set the postal rates for different types of stamps
+    */
+    @Test
+    public void testSampleRatesOTHER_METERPOSTALINDICA(){
+
+        international = new InternationalMail(length, height, width, weight, Item.OTHER_METERPOSTALINDICA);
+        switch(international.itemType){
+            case OTHER_METERPOSTALINDICA:
+                assert(international.rateFor100 == 5.56);
+                assert(international.rateFor200 == 9.69);
+                assert(international.rateFor500 == 19.39);
+                break;
+            default:
+                break;
+        }
+    }
+
+    /*
+    Calculate the Standard rate for posts under 30 grams
+    */
+    @Test
+    public void testCalculateStanardRateFor30(){
+
+        weight = 25;
+        international = new InternationalMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
+
+        assert(international.calculateStandard() == international.rateFor30);
+    }
+
 }
