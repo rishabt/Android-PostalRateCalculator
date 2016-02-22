@@ -125,5 +125,17 @@ public class CanadaMailTest {
         assert(canada.calculateNonStandard() == canada.rateFor100);
     }
 
+    /*
+    Calculate the Non-Standard rate for rateFor200
+    */
+    @Test
+    public void testCalculateNonStandardRateFor200(){
+
+        weight = 195;
+        canada = new CanadaMail(length, height, width, weight, Item.OTHER_METERPOSTALINDICA);
+
+        assert(canada.calculateNonStandard() == canada.rateFor200);
+    }
+
 
 }
