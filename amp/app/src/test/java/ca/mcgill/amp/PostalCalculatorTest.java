@@ -122,6 +122,8 @@ public class PostalCalculatorTest {
 
         assertFalse(PostalCalculator.isValid(length,width,height,regular));
 
+        height = 0.5;
+        length = 24.5;
         width = 15.6;
 
         assertTrue(PostalCalculator.isValid(length,width,height,regular));

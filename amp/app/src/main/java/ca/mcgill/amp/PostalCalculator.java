@@ -27,7 +27,22 @@ public class PostalCalculator {
 
     public static boolean isValid(double length, double width, double height, boolean regular)
     {
-       return false;
+        if(length<=0 || width <=0 || height <=0 )
+            return false;
+        if(regular)
+        {
+            if(length<=24.5 && width <=15.6 && height <= .5 )
+                return true;
+            else
+                return false;
+        }
+        else
+        {
+            if(length<=38 && width <=27 && height <= 2 )
+                return true;
+            else
+                return false;
+        }
     }
 
     public double calculate(){
