@@ -101,5 +101,17 @@ public class CanadaMailTest {
         assert(canada.calculateStandard() == ErrorCodes.NEGATIVE_VALUE.code);
     }
 
+    /*
+  Check Error condition for overweight posts
+*/
+    @Test
+    public void testErrorConditionCalculateStandardRateOverWeight(){
+
+        weight = 55.0;
+        canada = new CanadaMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
+
+        assert(canada.calculateStandard() == ErrorCodes.OVERWEIGHT_FOR_CATEGORY.code);
+    }
+
 
 }
