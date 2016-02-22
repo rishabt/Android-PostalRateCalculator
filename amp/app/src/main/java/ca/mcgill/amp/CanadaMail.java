@@ -50,7 +50,10 @@ public class CanadaMail extends Mail {
 
     @Override
     double calculateStandard() {
-        // TODO Auto-generated method stub
+
+        if(this.weight > 0 && this.weight <= 30){
+            return this.rateFor30;
+        }
         return -1;
     }
 
