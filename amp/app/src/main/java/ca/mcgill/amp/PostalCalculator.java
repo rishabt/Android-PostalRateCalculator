@@ -5,7 +5,6 @@ package ca.mcgill.amp;
  */
 public class PostalCalculator {
 
-
     double weight;
     double height;
     double length;

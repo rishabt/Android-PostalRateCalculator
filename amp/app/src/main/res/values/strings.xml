@@ -3,4 +3,18 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string-array name="locations_array">
+        <item>US</item>
+        <item>Canada</item>
+        <item>International</item>
+    </string-array>
+    <string-array name="types_array">
+        <item>Stamps in booklets/coils/panes</item>
+        <item>Meter or Postal Indicia</item>
+        <item>Stamp(s)</item>
+    </string-array>
+    <string-array name="category_array">
+        <item>Regular</item>
+        <item>Other</item>
+    </string-array>
 </resources>
