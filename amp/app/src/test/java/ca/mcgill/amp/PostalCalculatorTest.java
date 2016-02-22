@@ -92,4 +92,13 @@ public class PostalCalculatorTest {
         PostalCalculator pc = new PostalCalculator(height, length, width, 99.0, Item.OTHER_STAMP, location_op2);
         assert(pc.calculate() == 1.80);
     }
+
+    /*
+    test International rate
+     */
+    @Test
+    public void testInternationalMailStandardCalculate(){
+        PostalCalculator pc = new PostalCalculator(height, length, width, 29.0, Item.REGULAR_SINGLESTAMP, location_op2);
+        assert(pc.calculate() == 2.50);
+    }
 }
