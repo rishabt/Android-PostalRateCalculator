@@ -78,8 +78,8 @@ public class CanadaMailTest {
     }
 
     /*
-   Calculate the Standard rate for posts under 50 grams
-*/
+    Calculate the Standard rate for posts under 50 grams
+    */
     @Test
     public void testCalculateStandardRateFor50(){
 
@@ -87,6 +87,18 @@ public class CanadaMailTest {
         canada = new CanadaMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
 
         assert(canada.calculateStandard() == canada.rateFor50);
+    }
+
+    /*
+    Check Error condition for negative weights
+    */
+    @Test
+    public void testErrorConditionCalculateStandardRateWeightLessThanZero(){
+
+        weight = -1;
+        canada = new CanadaMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
+
+        assert(canada.calculateStandard() == ErrorCodes.NEGATIVE_VALUE.code);
     }
 
 
