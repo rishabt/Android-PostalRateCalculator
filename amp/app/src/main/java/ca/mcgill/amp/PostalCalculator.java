@@ -40,9 +40,12 @@ public class PostalCalculator {
         }
         else if(location.equals("Canada")){
             Mail ca = new CanadaMail(this.length, this.height, this.width, this.weight, this.itemType);
-
-            return ca.calculateStandard();
-
+            if(Item.getType(itemType).equals("Regular")){
+                return ca.calculateStandard();
+            }
+            else{
+                return ca.calculateNonStandard();
+            }
         }
 
         return -1;

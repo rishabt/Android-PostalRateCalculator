@@ -76,11 +76,20 @@ public class PostalCalculatorTest {
     }
 
     /*
-    test US rate
+    test Canada rate
      */
     @Test
     public void testCanadaMailStandardCalculate(){
         PostalCalculator pc = new PostalCalculator(height, length, width, 29.0, Item.REGULAR_SINGLESTAMP, location_op2);
         assert(pc.calculate() == 1.00);
+    }
+
+    /*
+    test Canada rate
+     */
+    @Test
+    public void testCanadaMailNonStandardCalculate(){
+        PostalCalculator pc = new PostalCalculator(height, length, width, 99.0, Item.OTHER_STAMP, location_op2);
+        assert(pc.calculate() == 1.80);
     }
 }
