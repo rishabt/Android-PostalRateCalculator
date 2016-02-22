@@ -66,5 +66,14 @@ public class PostalCalculatorTest {
         assert(pc.calculate() == 1.20);
     }
 
+    /*
+    test US rate
+     */
+    @Test
+    public void testUSMailNonStandardCalculate(){
+        PostalCalculator pc = new PostalCalculator(height, length, width, 99.0, Item.OTHER_STAMP, location_op1);
+        assert(pc.calculate() == 2.95);
+    }
+
 
 }
