@@ -71,6 +71,8 @@ public class CanadaMail extends Mail {
             return this.rateFor100;
         }else if(this.weight > 100 && this.weight <= 200){
             return this.rateFor200;
+        }else if(this.weight > 200 && this.weight <= 300){
+            return this.rateFor300;
         }
 
         return -1;
