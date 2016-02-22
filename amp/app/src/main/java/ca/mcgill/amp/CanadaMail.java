@@ -55,6 +55,8 @@ public class CanadaMail extends Mail {
             return this.rateFor30;
         }else if(this.weight > 30 && this.weight <= 50){
             return this.rateFor50;
+        }else if(this.weight < 0){
+            return ErrorCodes.NEGATIVE_VALUE.code;
         }
 
         // TODO Auto-generated method stub
