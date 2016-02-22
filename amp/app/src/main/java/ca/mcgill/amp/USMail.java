@@ -53,7 +53,7 @@ public class USMail extends Mail {
             return ErrorCodes.OVERWEIGHT_FOR_CATEGORY.code;
         }
 
-        return 0.0;
+        return -1;
     }
 
     @Override
@@ -65,8 +65,13 @@ public class USMail extends Mail {
             return this.rateFor200;
         }else if(this.weight > 200 && this.weight <= 500){
             return this.rateFor500;
+        }else if(this.weight < 0){
+            return ErrorCodes.NEGATIVE_VALUE.code;
+        }
+        else if(this.weight > 500){
+            return ErrorCodes.OVERWEIGHT_FOR_CATEGORY.code;
         }
 
-        return 0.0;
+        return -1;
     }
 }
