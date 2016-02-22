@@ -129,4 +129,16 @@ public class InternationalMailTest {
         assert(international.calculateStandard() == international.rateFor50);
     }
 
+    /*
+       Check Error condition for negative weights
+    */
+    @Test
+    public void testErrorConditionCalculateStandardRateWeightLessThanZero(){
+
+        weight = -1;
+        international = new InternationalMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
+
+        assert(international.calculateStandard() == ErrorCodes.NEGATIVE_VALUE.code);
+    }
+
 }
