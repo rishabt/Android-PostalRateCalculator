@@ -28,7 +28,12 @@ public class PostalCalculator {
     public double calculate(){
 
         double rate;
-        
+
+        if(location.equals("US")){
+            Mail us = new USMail(this.length, this.height, this.width, this.weight, this.itemType);
+            return us.calculateStandard();
+
+        }
 
         return -1;
     }
