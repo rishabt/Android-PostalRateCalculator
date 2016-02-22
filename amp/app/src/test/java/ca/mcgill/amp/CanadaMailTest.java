@@ -102,8 +102,8 @@ public class CanadaMailTest {
     }
 
     /*
-  Check Error condition for overweight posts
-*/
+    Check Error condition for overweight posts
+    */
     @Test
     public void testErrorConditionCalculateStandardRateOverWeight(){
 
