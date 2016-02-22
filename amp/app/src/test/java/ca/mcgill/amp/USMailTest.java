@@ -190,9 +190,4 @@ public class USMailTest {
 
         assert(us.calculateNonStandard() == us.rateFor500);
     }
-
-
-
-
-
 }
