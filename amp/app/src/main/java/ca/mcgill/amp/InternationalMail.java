@@ -67,6 +67,13 @@ public class InternationalMail extends Mail {
         else if(this.weight > 200 && this.weight <= 500){
             return this.rateFor500;
         }
+        else if(this.weight < 0){
+            return ErrorCodes.NEGATIVE_VALUE.code;
+        }
+        else if(this.weight > 500){
+            return ErrorCodes.OVERWEIGHT_FOR_CATEGORY.code;
+        }
+
         return -1;
     }
 }

@@ -189,4 +189,28 @@ public class InternationalMailTest {
         assert(international.calculateNonStandard() == international.rateFor500);
     }
 
+    /*
+       Check Error condition for negative weights
+    */
+    @Test
+    public void testErrorConditionCalculateNonStandardRateWeightLessThanZero(){
+
+        weight = -1;
+        international = new InternationalMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
+
+        assert(international.calculateNonStandard() == ErrorCodes.NEGATIVE_VALUE.code);
+    }
+
+    /*
+      Check Error condition for overweight posts
+   */
+    @Test
+    public void testErrorConditionCalculateNonStandardRateOverWeight(){
+
+        weight = 505.0;
+        international = new InternationalMail(length, height, width, weight, Item.REGULAR_METERPOSTALINDICA);
+
+        assert(international.calculateNonStandard() == ErrorCodes.OVERWEIGHT_FOR_CATEGORY.code);
+    }
+
 }
