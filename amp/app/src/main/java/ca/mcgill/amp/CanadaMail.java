@@ -66,7 +66,11 @@ public class CanadaMail extends Mail {
 
     @Override
     double calculateNonStandard() {
-        // TODO Auto-generated method stub
+
+        if(this.weight > 0 && this.weight <= 100){
+            return this.rateFor100;
+        }
+
         return -1;
     }
 }
