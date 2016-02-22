@@ -160,4 +160,16 @@ public class CanadaMailTest {
 
         assert(canada.calculateNonStandard() == canada.rateFor400);
     }
+
+    /*
+    Calculate the Non-Standard rate for rateFor500
+    */
+    @Test
+    public void testCalculateNonStandardRateFor500(){
+
+        weight = 495;
+        canada = new CanadaMail(length, height, width, weight, Item.OTHER_METERPOSTALINDICA);
+
+        assert(canada.calculateNonStandard() == canada.rateFor500);
+    }
 }
