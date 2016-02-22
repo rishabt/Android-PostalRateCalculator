@@ -31,9 +31,14 @@ public class PostalCalculator {
 
         if(location.equals("US")){
             Mail us = new USMail(this.length, this.height, this.width, this.weight, this.itemType);
-            return us.calculateStandard();
-
+            if(Item.getType(itemType).equals("Regular")){
+                return us.calculateStandard();
+            }
+            else{
+                return us.calculateNonStandard();
+            }
         }
+        
 
         return -1;
     }
